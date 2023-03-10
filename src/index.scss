@@ -1,0 +1,79 @@
+@import 'normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  background: #e5e5e5;
+}
+
+.App {
+  margin: 0 auto;
+  max-width: 550px;
+  background: #ffffff;
+}
+
+.header {
+  padding: 20px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: #ffffff;
+
+  &__meme-logo {
+    margin-right: 7px;
+    height: 100%;
+  }
+
+  &__title {
+    margin-right: auto;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+}
+
+main {
+  padding: 36px;
+}
+
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 15px;
+
+  &__text-field {
+    border: 1px solid #d5d4d8;
+    border-radius: 5px;
+    text-indent: 5px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #0d0d0d;
+    }
+  }
+
+  &__submit-btn {
+    grid-column: 1 / -1;
+    background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 1px 1px #aa18dadb;
+    }
+  }
+}
