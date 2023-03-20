@@ -46,6 +46,7 @@ main {
 }
 
 .form {
+  margin-bottom: 17px;
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 15px;
@@ -76,4 +77,8 @@ main {
       box-shadow: 0 0 1px 1px #aa18dadb;
     }
   }
+}
+
+.meme-image {
+  max-width: 100%;
 }
