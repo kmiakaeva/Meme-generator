@@ -7,7 +7,6 @@ export default function Meme() {
     bottomText: '',
     randomImage: 'https://i.imgflip.com/23ls.jpg',
   });
-
   const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   function getMemeImage() {
@@ -22,6 +21,14 @@ export default function Meme() {
     });
   }
 
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  }
+
   return (
     <main>
       <div className="form">
@@ -29,12 +36,18 @@ export default function Meme() {
           className="form__text-field"
           type="text"
           placeholder="Top Text"
-        ></input>
+          onChange={handleChange}
+          name="topText"
+          value={meme.topText}
+        />
         <input
           className="form__text-field"
           type="text"
           placeholder="Bottom Text"
-        ></input>
+          onChange={handleChange}
+          name="bottomText"
+          value={meme.bottomText}
+        />
         <button
           onClick={getMemeImage}
           className="form__submit-btn"
@@ -44,7 +57,11 @@ export default function Meme() {
           Get a new meme image 🖼
         </button>
       </div>
-      <img className="meme-image" src={meme.randomImage} alt="Meme"></img>
+      <div className="meme">
+        <img className="meme-image" src={meme.randomImage} alt="Meme" />
+        <h2 className="top">{meme.topText}</h2>
+        <h2 className="bottom">{meme.bottomText}</h2>
+      </div>
     </main>
   );
 }
